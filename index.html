@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <div id="mainArea">
+      <table id="statusInfo">
+        <tr>
+          <td id="day"></td>
+          <td colspan="2" id=""><div id="currency">Currency: ￥300</div></td>
+          <td id="income">Income: Y300</td>
+        </tr>
+      </table>
+
+      <canvas id="graph"></canvas>
+      <table id="icons">
+        <tr>
+          <td id="icon0"></td><td id="icon1"></td><td id="icon2" ></td><td id="icon3"></td><td id="icon4"></td><td id="icon5"></td>
+        </tr>
+      </table>
+
+      <canvas id="focusGraph"></canvas>
+      <table id="timerSliderTable">
+        <tr><td></td></tr>
+      </table>
+      <div id='timerSliderCase'><div id="timerSlider"></div></div>
+
+      <table id="resources">
+        <tr>
+          <td class="r0 economyButton" id="r0Buy">BUY</td>
+          <td class="r1 economyButton" id="r1Buy">BUY</td>
+          <td class="r2 economyButton" id="r2Buy">BUY</td>
+          <td class="r3 economyButton" id="r3Buy">BUY</td>
+          <td class="r4 economyButton" id="r4Buy">BUY</td>
+          <td class="r5 economyButton" id="r5Buy">BUY</td>
+        </tr>
+        <tr>
+          <td id="r0Button" class="r0 rInfo" href="">
+            <div id="r0Value" class="value">￥</div>
+            <div id="r0Owned" class="owned">230</div>
+          </td>
+          <td id="r1Button" class="r1 rInfo" href="">
+            <div id="r1Value" class="value">￥</div>
+            <div id="r1Owned" class="owned">230</div>
+          </td>
+          <td id="r2Button" class="r2 rInfo" href="">
+            <div id="r2Value" class="value">￥</div>
+            <div id="r2Owned" class="owned">230</div>
+          </td>
+          <td id="r3Button" class="r3 rInfo" href="">
+            <div id="r3Value" class="value">￥</div>
+            <div id="r3Owned" class="owned">230</div>
+          </td>
+          <td id="r4Button" class="r4 rInfo" href="">
+            <div id="r4Value" class="value">￥</div>
+            <div id="r4Owned" class="owned">230</div>
+          </td>
+          <td id="r5Button" class="r5 rInfo" href="">
+            <div id="r5Value" class="value">￥</div>
+            <div id="r5Owned" class="owned">230</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="r0 economyButton" id="r0Sell">SELL</td>
+          <td class="r1 economyButton" id="r1Sell">SELL</td>
+          <td class="r2 economyButton" id="r2Sell">SELL</td>
+          <td class="r3 economyButton" id="r3Sell">SELL</td>
+          <td class="r4 economyButton" id="r4Sell">SELL</td>
+          <td class="r5 economyButton" id="r5Sell">SELL</td>
+        </tr>
+      </table>
+
+      <table id="dues">
+        <tr>
+          <td id="duesLabel">Dues :</td>
+          <td id="duesList"></td>
+          <td id="payDues">PAY</td>
+        </tr>
+        <tr><td id="duesTimerNumber" colspan="3">10</td></tr>
+        <tr id="duesTimerRow">
+          <td colspan="3" ><div id="duesTimerSlider"></div></td>
+        </tr>
+      </table>
+
+      <table id="offersWrapper">
+        <tr>
+          <td id="offer0" class="offerCard">
+            <div id="offer0Content" class="offerContent">
+              <div class="paysContainer">
+                <div class="offerPays"></div><div class="offerIncome"></div>
+              </div>
+              <div class="costsContainer">
+                <div class="offerCosts"></div>
+              </div>
+            </div>
+            <div id="offer0Button" class="offerButton"></div>
+          </td>
+          <td id="offer1" class="offerCard">
+            <div id="offer1Content" class="offerContent">
+              <div class="paysContainer">
+                <div class="offerPays"></div><div class="offerIncome"></div>
+              </div>
+              <div class="costsContainer">
+                <div class="offerCosts"></div>
+              </div>
+            </div>
+            <div id="offer1Button" class="offerButton"></div>
+          </td>
+          <td id="offer2" class="offerCard">
+            <div id="offer2Content" class="offerContent">
+              <div class="paysContainer">
+                <div class="offerPays"></div><div class="offerIncome"></div>
+              </div>
+              <div class="costsContainer">
+                <div class="offerCosts"></div>
+              </div>
+            </div>
+            <div id="offer2Button" class="offerButton"></div>
+          </td>
+          <td id="offer3" class="offerCard">
+            <div id="offer3Content" class="offerContent">
+              <div class="paysContainer">
+                <div class="offerPays"></div><div class="offerIncome"></div>
+              </div>
+              <div class="costsContainer">
+                <div class="offerCosts"></div>
+              </div>
+            </div>
+            <div id="offer3Button" class="offerButton"></div>
+          </td>
+        </tr>
+      </table>
+
+
+      <div id="focusGraphIcon"></div>
+      <div id="gameOver-full" class="hide">
+        <div id="gameOver-wrapper">
+          <div id="gameOver-screen">
+            <div id="gameOverLabel">Game Over</div>
+            <table id="resultsTable">
+              <th colspan="2">Score</th>
+              <tr>
+                <td class="resultLabel">Net Worth :</td>
+                <td id="nwScore" class="score">xxx</td>
+              </tr>
+              <tr>
+                <td class="resultLabel">Dues Value x 1.25:</td>
+                <td id="duesScore" class="score">1,113,245,222</td>
+              </tr>
+              <tr>
+                <td class="resultLabel">Total:</td>
+                <td id="totalScore" class="score">xxx</td>
+              </tr>
+            </table>
+            <div id="gameOverButton"><div>Play Again</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <script src="bbss.js"></script>
+  </body>
+</html>

@@ -1,0 +1,480 @@
+body{
+  background-color: black;
+  padding: 0px;
+  font-size: 32px;
+  color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Stylish', sans-serif;
+  margin: 0px;
+}
+
+#mainArea {
+  padding: 0px;
+  background-color: transparent;
+  border: 1px solid yellow;
+  margin: auto;
+  margin-top: 20px;
+  width: 480px;
+  height: 800px;
+  border-top: none;
+
+}
+
+canvas{
+  background-color: black;
+}
+
+#statusInfo {
+  width: 100%;
+  text-align: left;
+  background-color: #000;
+  color: yellow;
+  border: 1px yellow;
+  border-top: solid;
+  border-bottom: solid;
+  font-size: 20px;
+  table-layout: fixed;
+}
+#statusInfo td{
+  padding-left: 10px;
+}
+#currency{
+  text-align: center;
+  padding: 0px;
+}
+#income{
+  text-align: right;
+}
+#income small{
+  font-size: 15px;
+}
+
+#graph{
+    /*border-bottom: 1px  solid yellow;*/
+    width: 100%;
+    height: 180px;
+}
+
+#focusGraph{
+  border: 1px solid yellow;
+  border-left: none;
+  border-right: none;
+  width:100%;
+  height:100px;
+  margin:auto;
+  position: relative;
+  top: -5px;
+  background-color:transparent;
+}
+
+#focusGraphIcon{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 260px;
+  left: -2px;
+  z-index: -1;
+  font-size: 60px;
+  color: #333;
+}
+
+#icons {
+  width : 100%;
+  text-align: center;
+  table-layout: fixed;
+  display: table;
+  height: 0px ;
+  line-height: 0px;
+  width: 480px;
+  height: 0px !important;
+  top: -16px;
+  position: relative;
+  padding: 0px;
+  padding-left: : 2px;
+  padding-right: : 2px;
+}
+
+#icons td { text-align: center;  }
+
+#icons td>i{
+  line-height: 0px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  height 0px;
+}
+
+.value{
+  color:yellow;
+  font-size: 20px;
+}
+
+.owned{
+  font-size: 32px;
+}
+
+
+.rinfo{
+  border: 1px dotted;
+  height: 65px;
+}
+
+.rButton div{ padding :2px;}
+
+
+.economyButton:hover, #payDues:hover, .offerButton:hover{
+  background-color: #444;
+  cursor:pointer;
+}
+
+.economyButton{
+  border: 2px solid;
+  height: 40px;
+}
+
+.disabledButton{
+  border-color: #333 !important;
+  color: #333 !important;
+}
+
+.disabledButton:hover{
+  cursor:default;
+  background-color: black;
+}
+
+#resources{
+  width : 100%;
+  table-layout: fixed;
+  padding: 4px;
+}
+
+#resources td{
+    text-align: center;
+}
+
+
+#timerSliderCase {
+  width: 100%;
+  height: 4px;
+  border: 1px solid yellow;
+  position: relative;
+  top: -6px;
+  left: -1px;
+  padding: 0px;
+}
+
+#timerSlider{
+    background-color: yellow;
+    width: 100%;
+    height: 5px;
+    float: right;
+}
+
+#dues{
+  border-top: 2px solid red;
+  width: 100%;
+  table-layout: fixed;
+  margin: auto;
+  padding: 4px;
+  margin-top: 5px;
+}
+
+.highlighted{
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow,
+  -2px 0 rgba(255, 255, 0, 0.4), 0 2px rgba(255, 255, 0, 0.4), 2px 0 rgba(255, 255, 0, 0.4), 0 -2px rgba(255, 255, 0, 0.4),
+  -3px 0 rgba(255, 255, 0, 0.2), 0 3px rgba(255, 255, 0, 0.2), 3px 0 rgba(255, 255, 0, 0.2), 0 -3px rgba(255, 255, 0, 0.2),
+  -4px 0 rgba(255, 255, 0, 0.1), 0 4px rgba(255, 255, 0, 0.1), 4px 0 rgba(255, 255, 0, 0.1), 0 -4px rgba(255, 255, 0, 0.1);
+}
+
+#duesList{
+  font-size: 20px;
+  letter-spacing: 6px;
+  text-align: center;
+}
+
+#duesList i{
+  line-height: 24px;
+}
+
+#payDues{
+  width: 20%;
+  border: 1px solid red;
+  text-align: center;
+  vertical-align: middle;
+  height: 40px;
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow,
+  -2px 0 rgba(255, 255, 0, 0.4), 0 2px rgba(255, 255, 0, 0.4), 2px 0 rgba(255, 255, 0, 0.4), 0 -2px rgba(255, 255, 0, 0.4),
+  -3px 0 rgba(255, 255, 0, 0.2), 0 3px rgba(255, 255, 0, 0.2), 3px 0 rgba(255, 255, 0, 0.2), 0 -3px rgba(255, 255, 0, 0.2),
+  -4px 0 rgba(255, 255, 0, 0.1), 0 4px rgba(255, 255, 0, 0.1), 4px 0 rgba(255, 255, 0, 0.1), 0 -4px rgba(255, 255, 0, 0.1);
+}
+
+#payDues.disabledButton{
+  text-shadow: none;
+}
+
+#dues.paid tr td {
+  color:  #333;
+  border-color: #333;
+}
+
+#dues.paid {
+  border-color: #333;
+}
+
+#dues.paid tr td #duesTimerSlider{
+  background-color: #333;
+}
+
+
+#duesLabel{
+  width: 14%;
+  text-align: center;
+  vertical-align: middle;
+  color: red;
+  font-size: 20px;
+}
+
+#duesTimerRow>td {
+  border : 1px solid red;
+  height: 18px;
+  padding: 0px;
+}
+
+#duesTimerSlider{
+  background-color: red;
+  width: 100%;
+  height: 19px;
+  float: right;
+  left: 1px;
+  position: relative;
+}
+
+#duesTimerNumber{
+  height: 3px; /* spacing  */
+  color: white !important;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  top: 13px;
+  position: relative;
+  line-height: 0px;
+  padding: 0px;
+  z-index: 3;
+}
+
+#offersWrapper{
+  width: 99%;
+  margin:  auto;
+  text-align: center;
+}
+
+.offerCard{
+  width: 100px;
+  border: 1px solid orange;
+  height: 192px;
+  margin: 2px;
+  color:yellow;
+}
+
+.offerCard.accepted > .offerButton:hover,
+.offerCard.rejected > .offerButton:hover,
+.offerCard.ignored > .offerButton:hover{
+  background-color: transparent;
+  cursor: default;
+}
+
+.offercard.ignored > .offerButton {
+  color: #333;
+  border: none;
+  font-size: 40px ;
+}
+.offercard.ignored > .offerContent,
+.offercard.rejected > .offerContent {
+  color: #333 !important;
+}
+
+.offercard.ignored > .offerContent > .paysContainer > .offerPays > span,
+.offercard.rejected > .offerContent > .paysContainer > .offerPays > span {
+  color: #333 !important;
+}
+
+.offercard.ignored > .offerContent > .costsContainer > .offerCosts > span,
+.offercard.rejected > .offerContent > .costsContainer > .offerCosts > span {
+  color: #333 !important;
+  text-shadow: none !important;
+}
+
+.offercard.accepted > .offerContent > .paysContainer{
+  border-color: lime;
+}
+
+.offercard.rejected > .offerContent > .paysContainer,
+.offercard.ignored > .offerContent > .paysContainer{
+  border-color: #333;
+}
+
+.offerCard.accepted{
+  border-color: lime;
+}
+
+.offerCard.rejected{
+  border-color: red;
+}
+
+.offerCard.accepted > .offerButton{
+  color: lime;
+  border: none;
+  font-size: 40px ;
+}
+
+.offerCard.rejected > .offerButton{
+  color: red;
+  border: none;
+  font-size: 40px ;
+}
+
+.offerCard.ignored{
+  border-color: #333;
+  color: #333;
+}
+
+.offerContent{
+  width: 100%;
+  height: 70%;
+}
+
+.offerPays, .offerCosts{
+  font-size: 20px;
+  padding-top: 6px;
+  width: 100%;
+  height: 26px;
+}
+
+.offerCosts{
+  padding-top: 15px;
+}
+
+
+
+.offerPays > span > i, .offerCosts > span > i{
+  text-align: center;
+  width:30px;
+}
+
+
+.offerButton{
+  width: calc(100% - 8px);
+  height: calc(30% - 8px);
+  border: 1px solid white;
+  margin: 3px;
+  background-color: transparent;
+  text-align: middle;
+}
+
+.offerButton.acceptState{
+  color: lime;
+  border-color: lime;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.offerButton.rejectState{
+  color: red;
+  border-color: red;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.paysContainer{
+  height: 60%;
+  border-bottom: 1px dotted orange;
+  vertical-align: middle;
+}
+
+.offerIncome{
+  font-size: 18px;
+}
+
+
+#gameOver-full{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(40,40,40,.9);
+  z-index: 4;
+}
+
+.hide { display: none; }
+
+
+#gameOverLabel{
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  font-size: 40px;
+}
+
+#gameOver-wrapper{
+  width: 320px;
+  height: 500px;
+  position: relative;
+  border: 3px solid red;
+  margin: auto;
+  background-color: black;
+  z-index: 5;
+  top: 170px;
+  color: red;
+}
+
+#gameOver-screen{
+  width: 318;
+  height: 498px;
+  border: 1px solid yellow;
+
+}
+
+#resultsTable{
+  width: 80%;
+  margin: auto;
+  margin-top: 60px;
+  table-layout: fixed;
+    color: red;
+    font-size: 16px;
+}
+
+#resultsTable th{
+  border-bottom: 1px dashed yellow;
+  font-size: 22px;
+}
+#totalScore{
+  color:yellow;
+}
+
+.score{
+  text-align: right;
+  font-family:monospace;
+}
+.resultLabel{
+  text-align: right;
+}
+
+#gameOverButton{
+  width: 40%;
+  border: 2px solid red;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+  margin-top: 120px;
+  padding: 12px;
+}
+
+#gameOverButton:hover{
+  background-color: #440;
+  cursor:pointer;
+}
