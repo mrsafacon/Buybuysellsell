@@ -223,7 +223,7 @@ function gameLogic(timeStamp) {
     } else gameInfo.dayOfWeek++;
     gameInfo.day++;
     nextWorldTick = timeStamp + worldTickIncrement; //store tomorrows time
-    //drawGraphs(timeStamp);  //draw daily changes
+    drawGraphs(timeStamp);  //draw daily changes
   }
 }
 
