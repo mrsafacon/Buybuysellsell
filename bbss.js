@@ -10,6 +10,7 @@ const graphContext = document.getElementById('graph').getContext("2d");
 const focusGraphContext = document.getElementById('focusGraph').getContext("2d");
 const graphInfo = {};
 const focusGraphInfo = {}
+const currencySymbol = '&#165;';
 let fullDrawThisFrame = true;
 
 const gameInfo = {
@@ -231,7 +232,7 @@ function gameOver() { //stop gameplay, fill in score info and activate gameOver 
   let netWorth = gameInfo.currency;
   let duesScore = Math.floor(gameInfo.duesScore);
   for (let i = 0; i < resources.length; i++) netWorth += resources[i].value * resources[i].owned;
-  $('#nwScore').html('￥' + numberWithCommas(netWorth));
+  $('#nwScore').html(currencySymbol + numberWithCommas(netWorth));
   $('#duesScore').html(numberWithCommas(duesScore));
   $('#totalScore').html(numberWithCommas(duesScore + netWorth));
   $('#gameOver-full').removeClass('hide');
@@ -285,12 +286,12 @@ function drawUI(timeStamp) { //refresh ui every frame
 }
 
 function extendedDraw(timeStamp) { //more resource intensive draws that should only process when something changes
-  $('#currency').html(`Currency: ￥${gameInfo.currency}`);
+  $('#currency').html(`Currency: ${currencySymbol}${gameInfo.currency}`);
   $('#day').html(`Day: ${gameInfo.day}`);
-  $('#income').html(`￥${gameInfo.income} <small>/ day</small>`);
+  $('#income').html(`${currencySymbol}${gameInfo.income} <small>/ day</small>`);
 
   for (let i = 0; i < resources.length; i++) { //draw resource values
-    $(`#r${i}Value`).html(`￥${resources[i].value}`);
+    $(`#r${i}Value`).html(`${currencySymbol}${resources[i].value}`);
     $(`#r${i}Owned`).html(`${resources[i].owned}`);
 
     if (resources[i].value <= gameInfo.currency) $(`#r${i}Buy`).removeClass('disabledButton'); //display interactable button only if resources are available
@@ -403,7 +404,7 @@ function drawOffers(drawPay) { //draw offers , drawPay = true if it is an extend
     if (canPay == false) $(`#offer${i}Button`).addClass('disabledButton'); //toggle button as payable/not
     else $(`#offer${i}Button`).removeClass('disabledButton');
     if (drawPay == true) {
-      $(`#offer${i}content > .paysContainer > .offerIncome`).html(`￥${gameInfo.offers[i].income}<small> / day</small>`);
+      $(`#offer${i}content > .paysContainer > .offerIncome`).html(`${currencySymbol}${gameInfo.offers[i].income}<small> / day</small>`);
       $(`#offer${i}content > .paysContainer > .offerPays`).html(pay);
     }
   }
