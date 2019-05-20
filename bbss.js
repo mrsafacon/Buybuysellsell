@@ -219,7 +219,7 @@ function gameLogic(timeStamp) {
         nextWeekStart = timeStamp + duesTickIncrement; //store next week start for UI timer + slider
         fullDrawThisFrame = true; //next draw call will process all changes (more resource intensive)
       }
-      gameInfo.dayOfWeek = 0;
+      gameInfo.dayOfWeek = 1;
     } else gameInfo.dayOfWeek++;
     gameInfo.day++;
     nextWorldTick = timeStamp + worldTickIncrement; //store tomorrows time
@@ -281,13 +281,13 @@ function drawUI(timeStamp) { //refresh ui every frame
   let duesDurPercent = duesDurLeft / duesTickIncrement;
   $('#duesTimerNumber').html(Math.round(duesDurLeft / 1000)); //update weekly seconds counter
   $('#duesTimerSlider').css('width', `${duesDurPercent * 100}%`); //resize  weekly slider
-
+  $('#day').html(`Day: ${gameInfo.day}`);
   if (fullDrawThisFrame) extendedDraw(); //extended draw when a change has been made
 }
 
 function extendedDraw(timeStamp) { //more resource intensive draws that should only process when something changes
   $('#currency').html(`Currency: ${currencySymbol}${gameInfo.currency}`);
-  $('#day').html(`Day: ${gameInfo.day}`);
+
   $('#income').html(`${currencySymbol}${gameInfo.income} <small>/ day</small>`);
 
   for (let i = 0; i < resources.length; i++) { //draw resource values
