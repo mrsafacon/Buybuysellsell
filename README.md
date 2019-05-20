@@ -1,4 +1,4 @@
-# buybuysellsell
+# Buybuysellsell
 
 A financial simulation game written in Javascript, HTML, CSS.
 
