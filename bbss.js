@@ -217,10 +217,10 @@ function gameLogic(timeStamp) {
         $('#dues').removeClass('paid'); //UI stuff
         generateDues(); //calculate dues for this week
         nextWeekStart = timeStamp + duesTickIncrement; //store next week start for UI timer + slider
-        fullDrawThisFrame = true; //next draw call will process all changes (more resource intensive)
       }
       gameInfo.dayOfWeek = 1;
     } else gameInfo.dayOfWeek++;
+    fullDrawThisFrame = true; //next draw call will process all changes (more resource intensive)
     gameInfo.day++;
     nextWorldTick = timeStamp + worldTickIncrement; //store tomorrows time
     drawGraphs(timeStamp);  //draw daily changes
@@ -279,7 +279,9 @@ function drawUI(timeStamp) { //refresh ui every frame
 
   let duesDurLeft = nextWeekStart - timeStamp;
   let duesDurPercent = duesDurLeft / duesTickIncrement;
-  $('#duesTimerNumber').html(Math.round(duesDurLeft / 1000)); //update weekly seconds counter
+  duesDurLeft = Math.round(duesDurLeft / 1000);
+  if(duesDurLeft < 0) duesDurLeft = 0;
+  $('#duesTimerNumber').html(duesDurLeft); //update weekly seconds counter
   $('#duesTimerSlider').css('width', `${duesDurPercent * 100}%`); //resize  weekly slider
   $('#day').html(`Day: ${gameInfo.day}`);
   if (fullDrawThisFrame) extendedDraw(); //extended draw when a change has been made
